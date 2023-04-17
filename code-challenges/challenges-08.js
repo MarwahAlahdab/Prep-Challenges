@@ -76,13 +76,21 @@ const customerAndAge = (obj) => {
 
 const getEntries = (obj) => {
   // write your code here
-  return Object.entries(obj).map(([info, value]) => `${info}: ${value}`);
+  let arr = [];
+
+  for (let [key, value] of Object.entries(obj)) {
+   
+    arr.push(`${key}: ${value}`);
+  }
+
+  return arr;
+}
 
 
-};
 
 
-
+//or using map , just:
+//  return Object.entries(obj).map(([info, value]) => `${info}: ${value}`);
 
 
 
@@ -142,6 +150,11 @@ const getInfo = (arr) => {
     studentsName.push(arr[i].Students[j])}
   }
   return { coursesName, studentsName };
+
+
+
+
+
 };
 // or spread operator (...) to push every name alone not the whole array
 
@@ -153,7 +166,21 @@ const getInfo = (arr) => {
 
 
 
+//using for of
 
+
+
+// let coursesName = [];
+// let studentsName = [];
+
+// for (let { course, Students } of arr) {
+//   coursesName.push(course);
+//   for (let student of Students) {
+//     studentsName.push(student);
+//   }
+// }
+
+// return { coursesName, studentsName };
 
 
 
@@ -183,7 +210,34 @@ const getInfo = (arr) => {
 
 const getStudents = (arr) => {
   // write your code here
-};
+
+  // const courses = {
+  //   Python: ["Kalé", "Alisha"],
+  //   JavaScript: ["Alphonso", "Daley"],
+  //   Java: ["Briana"],
+  //   DotNet: ["Pru"],
+  // };
+
+  // const studentInfo = [];
+
+  // for (let name of arr) {
+  //   let course = "Unknown";
+
+
+
+  //   for (let courseName in courses) {
+  //     if (courses[courseName].includes(name)) {
+  //       course = courseName;
+  //       break;
+  //     }
+  //   }
+  //   studentInfo.push({ Student: name, course });
+  // }
+
+  // return studentInfo;
+}
+
+
 
 
 
