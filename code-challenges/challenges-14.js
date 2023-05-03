@@ -133,22 +133,24 @@ const replaceWords = (str) => {
 
 const arrToStr = (arr) => {
     // write your code here
-    // let str = '';
-    // for (let i = 0; i < arr.length; i++) {
-    //     str += arr[i];
-    //     if(i === arr.length-1)
-    //     return str;
-        
-    //     if ((i + 1) % 5 === 0  ) {
-    //         str += ', ';
-    //     } else 
-    //         str += ' ';
+    
+    const result = [];
+   
+    for (let i = 0; i < arr.length; i += 5) {
+        const part = arr.slice(i, i + 5).join(" ");
 
-           
-    //     }
+        if (i + 5 <= arr.length) {
+            // Add a comma after every part
+            result.push(part + ",");
+          } else {
+            result.push(part);
+          }
+        }
+        return result.join(" ");
        
     }
 
+   
 
 
 
@@ -177,17 +179,34 @@ const arrToStr = (arr) => {
 
 const letterCounter = (str) => {
     // write your code here
-    // let result = '';
-    // let count = 1;
+    let result = "";
+    let count = 1;
+  
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === str[i + 1]) {
+        count++;
+      }else if(str[i] == ' '){
+        result+=' '
+      continue
+      } else {
+        result += str[i]+count;
+        count = 1;
+      }
 
-    // for (let i = 0; i < str.length; i++) {
-    //     if (str[i] === str[i + 1]) {
-    //         count++;
-       
-    // }
 
-    // return result;
-}
+    }
+  
+    return result;
+  };
+    
+
+
+
+
+
+
+
+
 // -------------------------------------------------------------------------------------------------------
 
 
